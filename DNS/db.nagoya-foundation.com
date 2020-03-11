@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     ns1.nagoya-foundation.com. root.nagoya-foundation.com. (
+@       IN      SOA     ns1.woody-toys.be. root.woody-toys.be. (
                   3       ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -7,10 +7,10 @@ $TTL    604800
              604800 )   ; Negative Cache TTL
 ;
 ; name servers - NS records
-nagoya-foundation.com.     IN      NS      ns1.nagoya-foundation.com.
+woody-toys.be.     IN      NS      ns1.woody-toys.be.
 
 ; name servers - A records
-ns1.nagoya-foundation.com.          IN      A      173.20.0.2
+ns1.woody-toys.be.          IN      A      173.20.0.2
 
-www.nagoya-foundation.com.        IN      A      173.20.0.3
-b2b.nagoya-foundation.com.        IN      A      173.20.0.4
+www.woody-toys.be.        IN      A      173.20.0.3
+b2b.woody-toys.be.        IN      A      173.20.0.4

@@ -1,4 +1,4 @@
-zone "nagoya-foundation.com" {
+zone "woody-toys.be" {
     type master;
     file "/etc/bind/zones/db.nagoya-foundation.com";
 };
