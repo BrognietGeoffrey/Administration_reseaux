@@ -1,2 +1,4 @@
-# Administration_reseaux
-Un Super Github pour un sujet du  feu de dieu : l'administration de réseau !!!
+# Administration reseaux - Projet 
+Projet de second semestre du BAC2 - 2019-20120
+
+
