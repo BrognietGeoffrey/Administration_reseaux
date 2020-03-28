@@ -1,0 +1,13 @@
+options {
+    directory "/var/cache/bind";
+
+    auth-nxdomain no;    # conform to RFC1035
+
+    listen-on { 127.0.0.1; 172.20.0.1; };
+
+    allow-recursion {internal; };
+
+    version none;
+
+    forwarders {8.8.8.8;}
+};

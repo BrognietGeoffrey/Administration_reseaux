@@ -1,0 +1,4 @@
+zone "woody-toys.be" {
+    type master;
+    file "/etc/bind/zones/db.woody-toys.be";
+};
