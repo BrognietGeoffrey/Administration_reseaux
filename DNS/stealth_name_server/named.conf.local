@@ -1,17 +1,10 @@
-zone "woody-toys.be" {
-    type slave;
-    master {172.20.0.2}
-    file "/etc/bind/zones/db.woody-toys.be";
-};
 
 zone "woody-toys.hosts"{
     type master;
     file "/etc/bind/zones/db.woody-toys";
-    forwarders {};
-}
+};
 
 zone "20.172.in-addr.arpa" {
         type master;
         file "/var/cache/bind/db.woody-toys.inv";
-        forwarders {};
 };
