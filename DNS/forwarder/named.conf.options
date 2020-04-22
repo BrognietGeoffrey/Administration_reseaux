@@ -1,0 +1,14 @@
+options {
+    directory "/var/cache/bind";
+
+    auth-nxdomain no;    # conform to RFC1035
+
+    recursion yes;
+
+    version none;
+
+    forwarders {
+              8.8.8.8;
+              8.8.4.4;
+    };
+};

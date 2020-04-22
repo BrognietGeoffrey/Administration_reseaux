@@ -1,0 +1,21 @@
+acl internalIp{
+  172.20.10.0/24;
+  172.20.11.0/24;
+  172.20.12.0/24;
+  172.20.13.0/24;
+  172.20.14.0/24;
+  172.20.15.0/24;
+  172.20.16.0/24;
+  172.20.17.0/24;
+  172.20.18.0/24;
+  172.20.19.0/24;
+  172.20.20.0/24;
+  localhost;
+  localnets;
+};
+
+options {
+	directory "/var/named";
+	version "not currently available";
+	recursion yes;
+};
