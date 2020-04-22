@@ -15,7 +15,19 @@ acl internalIp{
 };
 
 options {
-	directory "/var/named";
-	version "not currently available";
-	recursion yes;
+// hide version number from clients for security reasons.
+auth-nxdomain no;
+version "not currently available";
+empty-zones-enable no;
+
+// optional - BIND default behavior is recursion
+recursion yes;
+
+forwarders{8.8.8.8;};
+// provide recursion service to trusted clients only
+allow-recursion { internalIp;};
+allow-query { internalIp;};
+
+// enable the query log
+querylog yes;
 };
