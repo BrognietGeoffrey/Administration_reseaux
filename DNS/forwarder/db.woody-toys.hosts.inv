@@ -11,5 +11,5 @@ $TTL    604800
 
 3.0        IN      PTR     ns1.woody-toys.hosts.
 
-1.10       IN      PTR     host1.woody-toys.hosts.
-2.10       IN      PTR     host2.woody-toys.hosts.
+2.10       IN      PTR     host1.woody-toys.hosts.
+3.10       IN      PTR     host2.woody-toys.hosts.

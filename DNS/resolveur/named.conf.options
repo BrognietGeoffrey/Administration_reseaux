@@ -23,7 +23,6 @@ empty-zones-enable no;
 // optional - BIND default behavior is recursion
 recursion yes;
 
-forwarders{8.8.8.8;};
 // provide recursion service to trusted clients only
 allow-recursion { internalIp;};
 allow-query { internalIp;};
