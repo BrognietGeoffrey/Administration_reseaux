@@ -4,7 +4,7 @@ zone "local"{
   forwarders {172.20.0.5;};
 };
 
-zone "wt3"{
+zone "wt3.ephec-ti.be"{
   type forward;
   forward only;
   forwarders {172.20.0.4;};
