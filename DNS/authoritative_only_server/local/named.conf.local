@@ -1,4 +1,4 @@
-zone "woody-toys.local" {
+zone "local.woody-toys.be" {
     type master;
     file "/etc/bind/zones/db.woody-toys.local";
 };

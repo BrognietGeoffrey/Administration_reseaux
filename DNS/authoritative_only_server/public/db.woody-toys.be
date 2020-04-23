@@ -7,10 +7,10 @@ $TTL    604800
              604800 )   ; Negative Cache TTL
 ;
 ; name servers - NS records
-                      IN      NS      ns1.woody-toys.be.
+@                      IN      NS      ns1.woody-toys.be.
 
 ; name servers - A records
-ns1.woody-toys.be.    IN      A      51.178.41.115
+ns1    IN      A      51.178.41.115
 
-b2b.woody-toys.be.    IN      A      51.178.41.7
-www.woody-toys.be.    IN      A      51.178.41.16
+b2b    IN      A      51.178.41.7
+www    IN      A      51.178.41.16

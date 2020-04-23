@@ -1,3 +1,14 @@
+zone "local.woody-toys.be"{
+  type forward;
+  forward only;
+  forwarders {172.20.0.5;};
+};
+
+zone "woody-toys.be"{
+  type forward;
+  forward only;
+  forwarders {172.20.0.4;};
+};
 
 zone "woody-toys.hosts"{
     type master;
