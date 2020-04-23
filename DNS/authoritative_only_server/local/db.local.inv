@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     ns1.woody-toys.hosts. root.woody-toys.hosts. (
+@       IN      SOA     ns1.local. root.local. (
                             3           ; Serial
                          3600           ; Refresh [1h]
                           600           ; Retry   [10m]
@@ -7,9 +7,9 @@ $TTL    604800
                           600 )         ; Negative Cache TTL [1h]
 ;
 ; name servers - NS records
-              IN      NS      ns1.woody-toys.hosts.
+           IN      NS      ns1.local.
 
-3.0        IN      PTR     ns1.woody-toys.hosts.
+2          IN      PTR     ns1.local.
 
-1.10       IN      PTR     host1.woody-toys.hosts.
-2.10       IN      PTR     host2.woody-toys.hosts.
+10         IN      PTR     intranet.local.
+20         IN      PTR     mx1.local.

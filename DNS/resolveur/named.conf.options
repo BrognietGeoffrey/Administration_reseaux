@@ -1,0 +1,32 @@
+acl internalIp{
+  172.30.10.0/24;
+  172.30.11.0/24;
+  172.30.12.0/24;
+  172.30.13.0/24;
+  172.30.14.0/24;
+  172.30.15.0/24;
+  172.30.16.0/24;
+  172.30.17.0/24;
+  172.30.18.0/24;
+  172.30.19.0/24;
+  172.30.20.0/24;
+  localhost;
+  localnets;
+};
+
+options {
+// hide version number from clients for security reasons.
+auth-nxdomain no;
+version "not currently available";
+empty-zones-enable no;
+
+// optional - BIND default behavior is recursion
+recursion yes;
+
+// provide recursion service to trusted clients only
+allow-recursion { internalIp;};
+allow-query { internalIp;};
+
+// enable the query log
+querylog yes;
+};
