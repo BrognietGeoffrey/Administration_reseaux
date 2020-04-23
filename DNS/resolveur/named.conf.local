@@ -1,0 +1,21 @@
+zone "local"{
+  type forward;
+  forward only;
+  forwarders {172.20.0.5;};
+};
+
+zone "wt3"{
+  type forward;
+  forward only;
+  forwarders {172.20.0.4;};
+};
+
+zone "hosts"{
+    type master;
+    file "/etc/bind/zones/db.hosts";
+};
+
+zone "30.172.in-addr.arpa" {
+        type master;
+        file "/var/cache/bind/db.hosts.inv";
+};

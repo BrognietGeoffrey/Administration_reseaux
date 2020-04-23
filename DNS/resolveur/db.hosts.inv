@@ -1,0 +1,19 @@
+$TTL    604800
+@       IN      SOA     ns1.hosts. root.hosts. (
+                            3           ; Serial
+                         3600           ; Refresh [1h]
+                          600           ; Retry   [10m]
+                        86400           ; Expire  [1d]
+                          600 )         ; Negative Cache TTL [1h]
+;
+; name servers - NS records
+           IN      NS      ns1.hosts.
+
+2.0        IN      PTR     ns1.hosts.
+
+2.10       IN      PTR     direction1.hosts.
+2.11       IN      PTR     secretariat1.hosts.
+2.12       IN      PTR     commerciaux1.hosts.
+2.13       IN      PTR     compta1.hosts.
+2.14       IN      PTR     hangar1.hosts.
+2.15       IN      PTR     atelier1.hosts.
