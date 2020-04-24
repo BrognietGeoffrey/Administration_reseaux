@@ -1,7 +1,6 @@
 zone "local"{
-  type forward;
-  forward only;
-  forwarders {172.20.0.5;};
+  type master;
+  file "/etc/bind/zones/db.local";
 };
 
 zone "wt3.ephec-ti.be"{
@@ -15,7 +14,12 @@ zone "hosts"{
     file "/etc/bind/zones/db.hosts";
 };
 
-zone "30.172.in-addr.arpa" {
+zone "0.20.172.in-addr.arpa" {
+        type master;
+        file "/var/cache/bind/db.local.inv";
+};
+
+zone "20.172.in-addr.arpa" {
         type master;
         file "/var/cache/bind/db.hosts.inv";
 };

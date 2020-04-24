@@ -10,11 +10,11 @@ $TTL    604800
 @                 IN      NS      ns1.hosts.
 
 ; name servers - A records
-ns1               IN      A      172.30.0.2
+ns1               IN      A      172.20.0.2
 
-direction1        IN      A      172.30.10.2
-secretariat1      IN      A      172.30.11.2
-commerciaux1      IN      A      172.30.12.2
-compta1           IN      A      172.30.13.2
-hangar1           IN      A      172.30.14.2
-atelier1          IN      A      172.30.15.2
+direction1        IN      A      172.20.10.2
+secretariat1      IN      A      172.20.11.2
+commerciaux1      IN      A      172.20.12.2
+compta1           IN      A      172.20.13.2
+hangar1           IN      A      172.20.14.2
+atelier1          IN      A      172.20.15.2
