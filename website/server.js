@@ -1,16 +1,19 @@
-'use strict';
+var express = require('express');
 
-const express = require('express');
+const http = require('http');
 
-// Constants
-const PORT = 8080;
-const HOST = '0.0.0.0';
+var app = express();
 
-// App
-const app = express();
-app.get('/', (req, res) => {
-  res.send('Hello World');
+app.get('/', function(req, res) {
+    res.sendFile('/public/html/acceuil.html', {root: __dirname });
+})
+
+.use('/', express.static('public'))
+
+.use(function(req, res, next){
+    res.setHeader('Content-Type', 'text/plain');
+    res.status(404).send('Page introuvable !');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+
+app.listen(8080);
