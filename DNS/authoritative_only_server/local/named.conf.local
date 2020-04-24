@@ -1,9 +1,0 @@
-zone "local" {
-    type master;
-    file "/etc/bind/zones/db.local";
-};
-
-zone "20.172.in-addr.arpa" {
-        type master;
-        file "/var/cache/bind/db.local.inv";
-};

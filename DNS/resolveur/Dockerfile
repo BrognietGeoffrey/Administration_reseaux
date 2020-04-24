@@ -16,6 +16,8 @@ COPY named.conf.options /etc/bind/
 COPY named.conf.local /etc/bind/
 COPY db.hosts /etc/bind/zones/
 COPY db.hosts.inv /var/cache/bind/
+COPY db.local /etc/bind/zones/
+COPY db.local.inv /var/cache/bind/
 
 # Run eternal loop
 CMD ["/bin/bash", "-c", "while :; do sleep 10; done"]
