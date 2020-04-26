@@ -5,7 +5,7 @@ const http = require('http');
 var app = express();
 
 app.get('/', function(req, res) {
-    res.sendFile('/public/html/acceuil.html', {root: __dirname });
+    res.sendFile('/public/html/acceuil_intranet.html', {root: __dirname });
 })
 
 .use('/', express.static('public'))

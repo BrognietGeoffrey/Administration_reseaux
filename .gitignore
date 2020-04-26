@@ -1,0 +1,6 @@
+websites/b2b/node_modules/*
+websites/intranet/node_modules/*
+websites/www/node_modules/*
+websites/b2b/package-lock.json
+websites/intranet/package-lock.json
+websites/www/package-lock.json

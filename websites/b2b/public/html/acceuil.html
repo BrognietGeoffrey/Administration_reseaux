@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr-BE">
+
+        <head>
+            <title>Woodytoys B2B</title>
+            <meta charset="utf-8">
+            <link rel="stylesheet" type = "text/css" href="/css/style.css" />
+            <script src="/js/acceuil.js" type="text/javascript"></script>
+        </head>
+
+    <body>
+        <h1> Bienvenue sur le site b2b de Woodytoys</h1>
+
+        <section>
+
+          <h2> Que désirez-vous faire ?</h2>
+
+          <div id="options">
+            <button class="buttons" onclick="search()"> Voir les vendeurs</button>
+            <button class="buttons" onclick="addForm()"> Ajouter un vendeur</button>
+          </div>
+        </section>
+
+        <section id="form" class="coreSection">
+          <form action="#" onsubmit="sendForm(); return false;">
+            <label for"fname"> Prénom : </label>
+            <input type="text" id="fname" name="fname"> <br>
+            <label for"lname"> Nom : </label>
+            <input type="text" id="lname" name="lname"> <br>
+            <div class="center">
+              <input type="submit" value="Submit">
+            </div>
+            <div class="center">
+              <span id="returnMessage"> </span>
+            </div>
+          </form>
+        </section>
+
+        <section id="search" class="coreSection">
+          <table id= "searchTable">
+
+          </table>
+        </section>
+    </body>
+
+    <footer>
+        Entreprise Woodytoys
+    </footer>
