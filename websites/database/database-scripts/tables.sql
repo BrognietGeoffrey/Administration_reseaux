@@ -1,0 +1,6 @@
+CREATE TABLE Vendeurs(
+  id INT AUTO_INCREMENT,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  PRIMARY KEY(id)
+);

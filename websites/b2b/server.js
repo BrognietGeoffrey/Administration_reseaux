@@ -6,8 +6,7 @@ var mariadb = require('mariadb/callback');
 var app = express();
 var database = express.Router();
 
-//const conn = mariadb.createConnection({host:'172.25.0.10', user:'root', password:"dataisneeded", database:"b2b"});
-const conn = mariadb.createConnection({host:'localhost', user:'root', password:"diomenios", database:"b2b"});
+const conn = mariadb.createConnection({host:'172.25.0.10', user:'root', password:"dataisneeded", database:"b2b"});
 
 const PATH = __dirname + '/public/';
 
