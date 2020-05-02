@@ -9,4 +9,4 @@ docker run -d --rm --name=host1 --net=wt --ip=172.20.10.2 --dns=172.20.0.2  dnsu
 docker run -d --rm --name=host2 --net=wt --ip=172.20.11.2 --dns=172.20.0.2  dnsutils /bin/bash -c "while :; do sleep 10; done"
 
 docker exec -d resolveur /etc/init.d/bind9  start
-docker exec -d resolveur /etc/init.d/bind9  start
+docker exec -d soa-public /etc/init.d/bind9  start
