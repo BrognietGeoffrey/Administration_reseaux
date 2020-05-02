@@ -3,12 +3,6 @@ zone "local"{
   file "/etc/bind/zones/db.local";
 };
 
-zone "wt3.ephec-ti.be"{
-  type forward;
-  forward only;
-  forwarders {172.20.0.4;};
-};
-
 zone "hosts"{
     type master;
     file "/etc/bind/zones/db.hosts";
