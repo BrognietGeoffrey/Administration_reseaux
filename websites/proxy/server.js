@@ -1,19 +1,34 @@
-var express = require('express');
+var http = require('http'),
+    httpProxy = require('http-proxy');
 
-const http = require('http');
-
-var app = express();
-
-app.get('/', function(req, res) {
-    res.sendFile('/public/html/acceuil.html', {root: __dirname });
-})
-
-.use('/', express.static('public'))
-
-.use(function(req, res, next){
-    res.setHeader('Content-Type', 'text/plain');
-    res.status(404).send('Page introuvable !');
+var proxy_www = new httpProxy.createProxyServer({
+        target: {
+            host: '172.30.0.10',
+            port: 8080
+        }
 });
 
+var proxy_b2b = new httpProxy.createProxyServer({
+        target: {
+            host: '172.30.0.20',
+            port: 8080
+        }
+});
 
-app.listen(8080);
+    http.createServer(function(req, res) {
+        if (req.headers.host === 'http://www.wt2-3.ephec-ti.be') {
+            proxy_www.proxyRequest(req, res);
+            proxy_www.on('error', function(err, req, res) {
+                if (err) console.log(err);
+                res.writeHead(500);
+                res.end('Oops, something went very wrong...');
+            });
+        } else if (req.headers.host === 'http://b2b.wt2-3.ephec-ti.be') {
+            proxy_b2b.proxyRequest(req, res);
+            proxy_b2b.on('error', function(err, req, res) {
+                if (err) console.log(err);
+                res.writeHead(500);
+                res.end('Oops, something went very wrong...');
+            });
+        }
+    }).listen(80);
