@@ -3,14 +3,14 @@ var http = require('http'),
 
 var proxy_www = new httpProxy.createProxyServer({
         target: {
-            host: '172.30.0.10',
+            host: 'www',
             port: 8080
         }
 });
 
 var proxy_b2b = new httpProxy.createProxyServer({
         target: {
-            host: '172.30.0.20',
+            host: 'b2b',
             port: 8080
         }
 });
