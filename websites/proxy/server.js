@@ -32,6 +32,7 @@ var proxy_b2b = new httpProxy.createProxyServer({
             });
         }
         else{
-          
+            res.set('Content-Type', 'text/plain');
+            res.send('Veuillez introduire un GUID pour retrouver l\'image !');
         }
-    }).listen(80);
+    }).listen(8080);
