@@ -16,14 +16,14 @@ var proxy_b2b = new httpProxy.createProxyServer({
 });
 
     http.createServer(function(req, res) {
-        if (req.headers.host === 'http://www.wt2-3.ephec-ti.be') {
+        if (req.headers.host === 'www.wt2-3.ephec-ti.be') {
             proxy_www.proxyRequest(req, res);
             proxy_www.on('error', function(err, req, res) {
                 if (err) console.log(err);
                 res.writeHead(500);
                 res.end('Oops, something went very wrong...');
             });
-        } else if (req.headers.host === 'http://b2b.wt2-3.ephec-ti.be') {
+        } else if (req.headers.host === 'b2b.wt2-3.ephec-ti.be') {
             proxy_b2b.proxyRequest(req, res);
             proxy_b2b.on('error', function(err, req, res) {
                 if (err) console.log(err);
@@ -32,7 +32,6 @@ var proxy_b2b = new httpProxy.createProxyServer({
             });
         }
         else{
-            res.set('Content-Type', 'text/plain');
-            res.send('Veuillez introduire un GUID pour retrouver l\'image !');
-        }
-    }).listen(8080);
+      	    console.log(req.headers.host);
+      	}
+    }).listen(80);
