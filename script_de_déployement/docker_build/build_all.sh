@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker build -t b2b websites/b2b/.
 docker build -t database websites/database/.
 docker build -t www websites/www/.

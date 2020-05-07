@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker rmi diomenios/administration_reseau:intranet
 docker rmi diomenios/administration_reseau:node_b2b
 docker rmi diomenios/administration_reseau:node_www
