@@ -6,8 +6,6 @@ var mariadb = require('mariadb/callback');
 var app = express();
 var database = express.Router();
 
-const conn = mariadb.createConnection({host:'database', user:'root', password:"dataisneeded", database:"b2b"});
-
 const PATH = __dirname + '/public/';
 
 app.get('/', function(req, res) {
@@ -15,10 +13,13 @@ app.get('/', function(req, res) {
 });
 
 app.get('/api/vendors', (req, res) => {
+  const conn = mariadb.createConnection({host:'database', user:'root', password:"dataisneeded", database:"b2b"});
+
   conn.query("SELECT * FROM Vendeurs", (err, rows) => {
     if (err) {
       throw err;
     }
+    conn.end();
     res.set('Content-Type', 'application/json');
     res.send(rows);
   });
@@ -30,10 +31,12 @@ app.post('/api/add_vendor', (req, res) => {
     res.send("error the vendor not be added");
   }
   else{
+    const conn = mariadb.createConnection({host:'database', user:'root', password:"dataisneeded", database:"b2b"});
     conn.query("INSERT INTO Vendeurs (first_name, last_name) values (?, ?);",[req.query.first_name, req.query.last_name] ,(err, rows) => {
       if (err) {
         throw err;
       }
+      conn.end();
       res.set('Content-Type', 'text/plain');
       res.send("Le vendeur " + req.query.first_name + " " + req.query.last_name + " a bien été ajouté");
     });

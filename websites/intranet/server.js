@@ -6,15 +6,15 @@ var mariadb = require('mariadb/callback');
 var app = express();
 var database = express.Router();
 
-const conn = mariadb.createConnection({host:'172.20.0.100', user:'root', password:"dataisneeded", database:"b2b"});
-
 const PATH = __dirname + '/public/';
 
 app.get('/api/tools', (req, res) => {
+  const conn = mariadb.createConnection({host:'172.20.0.100', user:'root', password:"dataisneeded", database:"b2b"});
   conn.query("SELECT * FROM Outils", (err, rows) => {
     if (err) {
       throw err;
     }
+    conn.end();
     res.set('Content-Type', 'application/json');
     res.send(rows);
   });
