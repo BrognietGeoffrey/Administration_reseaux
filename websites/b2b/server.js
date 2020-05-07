@@ -10,8 +10,6 @@ const conn = mariadb.createConnection({host:'database', user:'root', password:"d
 
 const PATH = __dirname + '/public/';
 
-var app = express();
-
 app.get('/', function(req, res) {
     res.sendFile('/public/html/acceuil.html', {root: __dirname });
 });
