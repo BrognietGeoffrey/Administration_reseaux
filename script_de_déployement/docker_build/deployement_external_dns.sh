@@ -9,3 +9,6 @@ if [ "$retour" == '' ]; then
 fi
 
 docker run -d --rm --name=soa-public --net=dmz-swarm --dns=127.0.0.1 --publish=51.178.41.115:53:53/udp soa-public
+
+docker exec -d soa-public /etc/init.d/bind9  start
+
