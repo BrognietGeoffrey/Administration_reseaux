@@ -1,5 +1,3 @@
-DOMAIN_IP = "localhost:8080";
-
 function search() {
   document.getElementById("search").style.display="flex";
   document.getElementById("form").style.display="none";

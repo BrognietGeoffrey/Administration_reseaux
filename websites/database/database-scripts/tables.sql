@@ -4,3 +4,10 @@ CREATE TABLE Vendeurs(
   last_name VARCHAR(50) NOT NULL,
   PRIMARY KEY(id)
 );
+
+CREATE TABLE Outils(
+  id INT AUTO_INCREMENT,
+  tool_name VARCHAR(50) NOT NULL,
+  tool_version VARCHAR(50) NOT NULL,
+  PRIMARY KEY(id)
+);
