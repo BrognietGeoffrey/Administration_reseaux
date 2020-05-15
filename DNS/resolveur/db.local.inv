@@ -12,4 +12,4 @@ $TTL    604800
 2          IN      PTR     ns1.local.
 
 10         IN      PTR     intranet.local.
-20         IN      PTR     mx1.local.
+100         IN      PTR     database.local.
