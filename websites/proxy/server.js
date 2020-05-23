@@ -1,21 +1,37 @@
-var http = require('http'),
+
+var https = require('https'),
     httpProxy = require('http-proxy');
+
+var fs = require('fs');
 
 var proxy_www = new httpProxy.createProxyServer({
         target: {
             host: 'www',
             port: 8080
-        }
+        },
+	ssl: {
+	    key: fs.readFileSync('key.pem', 'utf8'),
+	    cert: fs.readFileSync('server.crt', 'utf8')
+	}
 });
 
 var proxy_b2b = new httpProxy.createProxyServer({
         target: {
             host: 'b2b',
             port: 8080
-        }
+        },
+	ssl: {
+	    key: fs.readFileSync('key.pem', 'utf8'),
+	    cert: fs.readFileSync('server.crt', 'utf8')
+	}
 });
 
-    http.createServer(function(req, res) {
+const options = {
+  key: fs.readFileSync('key.pem', 'utf8'),
+  cert: fs.readFileSync('server.crt', 'utf8')
+};
+
+https.createServer(options, function(req, res) {
         if (req.headers.host === 'www.wt2-3.ephec-ti.be') {
             proxy_www.proxyRequest(req, res);
             proxy_www.on('error', function(err, req, res) {
@@ -29,9 +45,20 @@ var proxy_b2b = new httpProxy.createProxyServer({
                 if (err) console.log(err);
                 res.writeHead(500);
                 res.end('Oops, something went very wrong...');
-            });
+	    });
         }
         else{
-      	    console.log(req.headers.host);
+      	        res.writeHead(200);
+                res.end(req.headers.host);
+
       	}
-    }).listen(80);
+}).listen(443);
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+
+    res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+    res.end();
+
+}).listen(80);

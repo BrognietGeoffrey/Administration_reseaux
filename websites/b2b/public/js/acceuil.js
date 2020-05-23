@@ -31,7 +31,7 @@ function getAllVendors(){
         }
 	};
 
-	xhttp.open("GET", "http://"+ DOMAIN_IP +"/api/vendors", true);
+	xhttp.open("GET", "https://"+ DOMAIN_IP +"/api/vendors", true);
   xhttp.send();
 }
 
@@ -48,6 +48,6 @@ function sendForm(){
         }
 	};
 
-	xhttp.open("POST", "http://"+ DOMAIN_IP +"/api/add_vendor?first_name="+firstName+"&last_name="+lastName, true);
+	xhttp.open("POST", "https://"+ DOMAIN_IP +"/api/add_vendor?first_name="+firstName+"&last_name="+lastName, true);
   xhttp.send();
 }
