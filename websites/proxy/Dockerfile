@@ -1,9 +1,28 @@
-FROM httpd:latest
+FROM node:10
 
-COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+RUN apt-get update && \
+	apt-get install -y openssl
 
-RUN mkdir -p /usr/local/apache2/conf/sites/
+# Create app directory
 
-EXPOSE 80
+COPY generate_ssl.sh .
+RUN ./generate_ssl.sh
 
-CMD["httpd"; "-D", "FOREGROUND"]
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm ci --only=production
+
+# Bundle app source
+COPY . .
+
+#CMD bash
+
+EXPOSE 80/tcp
+EXPOSE 443
+
+CMD [ "node", "server.js" ]

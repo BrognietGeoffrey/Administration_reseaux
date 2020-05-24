@@ -1,0 +1,9 @@
+
+set from = "diomenios@wt2-3.ephec-ti.be"
+set realname = "Diomenios"
+set imap_user = "diomenios@wt2-3.ephec-ti.be"
+set imap_pass = "louis"
+
+set folder = "imaps://wt2-3.ephec-ti.be" 
+set ssl_starttls = "yes"
+set spoolfile = "+INBOX"
