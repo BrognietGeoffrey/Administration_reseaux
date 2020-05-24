@@ -1,21 +1,9 @@
-FROM node:10
+FROM httpd:latest
 
-# Create app directory
-WORKDIR /usr/src/app
+COPY httpd.conf /usr/local/apache2/conf/httpd.conf
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
+RUN mkdir -p /usr/local/apache2/conf/sites/
 
+EXPOSE 80
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source
-COPY . .
-
-EXPOSE 8080
-
-CMD [ "node", "server.js" ]
+CMD["httpd"; "-D", "FOREGROUND"]
