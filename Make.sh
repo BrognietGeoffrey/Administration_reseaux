@@ -26,6 +26,10 @@ elif [ $1 == "--build-proxy" ]; then
   docker build -t proxy websites/proxy/.
 elif [ $1 == "--build-dnsutils" ]; then
   docker build -t dnsutils hosts/ubuntu_dnsutils/.
+elif [ $1 == "--build-web" ]; then
+  docker build -t dnsutils hosts/ubuntu_web/.
+elif [ $1 == "--build-mail" ]; then
+  docker build -t dnsutils hosts/ubuntu_mail/.
 else
   echo "incorrect input"
 fi
