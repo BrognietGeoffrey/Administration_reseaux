@@ -1,1 +1,0 @@
-curl smtp://wt2-3.ephec-ti.be --mail-from louis@wt2-3.ephec-ti.be --mail-rcpt louis@wt2-3.ephec-ti.be --upload-file mail.txt

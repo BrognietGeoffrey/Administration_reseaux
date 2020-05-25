@@ -14,15 +14,19 @@ Projet de second semestre du BAC2 - 2019-20120
   * Pour build le serveur reverse-proxy : ***./Make.sh --build-proxy***
   * Pour build le site intranet : ***./Make.sh --build-intranet***
   * Pour build le poste ayant des outils pour vérifier le DNS et faire des pings : ***./Make.sh --build-dnsutils***
+  * Pour build le poste ayant des outils pour vérifier le Web : ***./Make.sh --build-host-web***
+  * Pour build le poste ayant des outils pour vérifier le Mail : ***./Make.sh --build-host-mail***
 * En ligne : via Dockerhub
   * Pour avoir l'image du résolveur DNS: ***docker pull diomenios/administration_reseau:resolveur***
   * Pour avoir l'image du SOA externe: ***docker pull diomenios/administration_reseau:soa-public***
-  * Pour avoir l'image du site www: ***docker pull diomenios/administration_reseau:node_www***
-  * Pour avoir l'image du site b2b: ***docker pull diomenios/administration_reseau:node_b2b***
-  * Pour avoir l'image de la database: ***docker pull diomenios/administration_reseau:mariadb***
-  * Pour avoir l'image du serveur reverse-proxy: ***docker pull diomenios/administration_reseau:node_proxy***
+  * Pour avoir l'image du site www: ***docker pull diomenios/administration_reseau:www***
+  * Pour avoir l'image du site b2b: ***docker pull diomenios/administration_reseau:b2b***
+  * Pour avoir l'image de la database: ***docker pull diomenios/administration_reseau:database***
+  * Pour avoir l'image du serveur reverse-proxy: ***docker pull diomenios/administration_reseau:proxy***
   * Pour avoir l'image du site intranet: ***docker pull diomenios/administration_reseau:intranet***
-  * Pour avoir l'image du poste ayant des outils pour vérifier le DNS et faire des pings : ***docker pull diomenios/administration_reseau:host_dns***
+  * Pour avoir l'image du poste ayant des outils pour vérifier le DNS et faire des pings : ***docker pull diomenios/administration_reseau:dnsutils***
+  * Pour avoir l'image du poste ayant des outils pour vérifier le Web : ***docker pull diomenios/administration_reseau:host-web***
+  * Pour avoir l'image du poste ayant des outils pour vérifier le Mail : ***docker pull diomenios/administration_reseau:host-mail***
 
 ***
 

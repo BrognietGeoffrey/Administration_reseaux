@@ -1,3 +1,5 @@
+#!/bin/bash
+
 retour=$(docker network ls | grep dmz-swarm)
 
 
@@ -8,5 +10,6 @@ if [ "$retour" == '' ]; then
   docker network create --driver=overlay --attachable dmz-swarm
 fi
 
-docker run -d --rm --name=soa-public --net=dmz-swarm --dns=127.0.0.1 --publish=51.178.41.115:53:53/udp soa-public
-/home/louis/Documents/Administration_reseaux/script_de_déployement/docker_build/deployement_internal.sh
+docker run -d --rm --name=soa-public --net=dmz-swarm --dns=127.0.0.1 --publish=51.178.41.115:53:53/udp diomenios/administration_reseau:soa-public
+
+docker exec -d soa-public /etc/init.d/bind9  start
