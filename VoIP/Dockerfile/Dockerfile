@@ -1,37 +1,23 @@
-
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y \
-    vim \
-    systemd \
-    net-tools \
-    telnet  \
-    build-essential libxml2-dev libncurses5-dev linux-headers-`18.04` libsqlite3-dev libssl-dev libedit-dev uuid-dev libjansson-dev
-RUN mkdir /usr/src/asterisk
-RUN cd /usr/src/asterisk
-#RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz
-COPY asterisk-17-current.tar.gz asterisk-17-current.tar.gz
-RUN chmod 666 asterisk-17-current.tar.gz
-#RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-17-current.tar.gz
-RUN tar -xvzf asterisk-17-current.tar.gz
-RUN cd asterisk-17.3.0
+ENV TZ=Europe/Minsk
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
 
+RUN apt-get update && apt-get upgrade -y
 
+RUN apt-get install wget -y
 
-#puis aller ds /asterisk version /contrib/script
-#et lancer ./install-prereq install
-#ensuite ./configure => voir logo a la fin
-#apres make menuselect
-#aller changer les sons et prendre fr ulow et alow
-#apres make && make install
-#apres make samples
-#puis make config
-#make install-logrotate
-#remplacer sip.conf et extensions.conf(ds le dossier /etc/asterisk)
-#service asterisk start
+RUN DEBIAN_FRONTEND=noninteractive apt-get install build-essential libxml2-dev libncurses5-dev linux-headers-generic libsqlite3-dev libssl-dev -y
 
+RUN cd /usr/src
+RUN mkdir asterisk
 
+RUN wget http://downloads.asterisk.org/pub/telephony/asterisk/releases/asterisk-17.4.0.tar.gz
+RUN tar -xvzf asterisk-17.4.0.tar.gz
+RUN cd /asterisk-17.4.0/contrib/scripts
 
-#module load chan_sip.so =>ds -rvvv pour la commande sip show peers
+#RUN ./asterisk-17.4.0/contrib/scripts/install_prereq install
+
+#RUN ./asterisk-17.4.0/configure
