@@ -1,0 +1,2 @@
+# nom de domaine        nom de domaine  selector  fichier  clef priv
+wt2-3.ephec-ti.be       wt2-3.ephec-ti.be:dkim:/etc/opendkim/opendkim.key
