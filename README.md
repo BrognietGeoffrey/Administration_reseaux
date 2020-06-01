@@ -33,7 +33,7 @@ Projet de second semestre du BAC2 - 2019-2020
 # Auteurs
 *Groupe* : **2TL2-3**
   - Louis Arys - [@Diomenios](https://github.com/Diomenios)
-  - Martin Perdeans - [@Martin-95](https://github.com/Martinp-95)
+  - Martin Perdaens - [@Martin-95](https://github.com/Martinp-95)
   - Jean-Michael Tang - [@jeanmtang](https://github.com/jeanmtang)
   - Geoffrey Brogniet - [@BrognietGeoffrey](https://github.com/BrognietGeoffrey)
   ***
